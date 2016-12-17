@@ -14,7 +14,68 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:text="Each side:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:id="@+id/textView"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:id="@+id/txtBoxEachSide"
+        android:textAlignment="center"
+        android:enabled="false"
+        android:text="@string/_10"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        tools:text="10"
+        tools:ignore="LabelFor"
+        android:maxLines="1" />
+
+    <TextView
+        android:text="Presets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/txtBoxEachSide"
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:text="60%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:visibility="visible"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:onClick="tisClick (MainActivity)"
+        android:layout_below="@+id/textView2"
+        android:layout_alignEnd="@+id/txtBoxEachSide"
+        android:layout_marginTop="23dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:text="@string/_55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPreOne"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:visibility="visible"
+        tools:onClick="tisClick"
+        android:onClick="tisClick"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignStart="@+id/txtBoxEachSide" />
+
 </RelativeLayout>
