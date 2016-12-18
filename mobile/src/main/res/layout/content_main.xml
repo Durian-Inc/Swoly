@@ -13,69 +13,130 @@
     tools:context="com.tripidevs.swoly.MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number|numberDecimal"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:id="@+id/txtBoxEachSide"
+        android:textAlignment="center"
+        android:enabled="false"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        tools:ignore="LabelFor"
+        android:maxLines="1"
+        android:hint="@string/_10lbs"
+        android:textSize="24sp" />
+
     <TextView
         android:text="Each side:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/textView"
+        tools:ignore="HardcodedText"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
-        android:id="@+id/textView"
-        tools:ignore="HardcodedText" />
+        android:textSize="36sp"
+        android:textAlignment="textStart" />
+
+    <TextView
+        android:text="@string/max_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/textView3"
+        android:textSize="36sp"
+        android:layout_below="@+id/btnPreTwo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Presets %:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView2"
+        tools:ignore="HardcodedText"
+        android:textSize="36sp"
+        android:layout_below="@+id/txtBoxEachSide"
+        android:layout_alignStart="@+id/textView" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:layout_marginTop="20dp"
-        android:id="@+id/txtBoxEachSide"
+        android:layout_marginTop="12dp"
+        android:id="@+id/editTxtMaxWeight"
+        android:textSize="24sp"
         android:textAlignment="center"
-        android:enabled="false"
-        android:text="@string/_10"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:clickable="false"
-        android:focusableInTouchMode="false"
-        android:focusable="false"
-        tools:text="10"
-        tools:ignore="LabelFor"
+        tools:ignore="HardcodedText,LabelFor"
+        android:hint="135"
+        android:layout_below="@+id/textView3"
+        android:layout_alignEnd="@+id/txtBoxEachSide"
+        android:layout_marginEnd="6dp"
         android:maxLines="1" />
 
-    <TextView
-        android:text="Presets"
-        android:layout_width="wrap_content"
+    <Button
+        android:text="70"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/txtBoxEachSide"
-        android:layout_centerHorizontal="true"
-        tools:ignore="HardcodedText" />
+        android:id="@+id/btnPreFour"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:onClick="buttonClick"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText"
+        android:layout_alignBaseline="@+id/btnPreThree"
+        android:layout_alignBottom="@+id/btnPreThree"
+        android:layout_toEndOf="@+id/textView3" />
 
     <Button
-        android:text="60%"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button4"
-        android:visibility="visible"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:onClick="tisClick (MainActivity)"
-        android:layout_below="@+id/textView2"
-        android:layout_alignEnd="@+id/txtBoxEachSide"
-        android:layout_marginTop="23dp"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:text="@string/_55"
-        android:layout_width="wrap_content"
+        android:text="55"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnPreOne"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:visibility="visible"
         tools:onClick="tisClick"
-        android:onClick="tisClick"
-        android:layout_alignBaseline="@+id/button4"
-        android:layout_alignBottom="@+id/button4"
-        android:layout_alignStart="@+id/txtBoxEachSide" />
+        android:onClick="buttonClick"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText"
+        android:layout_alignBaseline="@+id/btnPreTwo"
+        android:layout_alignBottom="@+id/btnPreTwo"
+        android:layout_toStartOf="@+id/textView3" />
+
+    <Button
+        android:text="60"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPreTwo"
+        android:visibility="visible"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginTop="30dp"
+        tools:ignore="DuplicateIds,HardcodedText"
+        android:onClick="buttonClick"
+        android:textSize="24sp"
+        android:layout_below="@+id/textView2"
+        android:layout_toEndOf="@+id/btnPreOne"
+        android:layout_marginStart="8dp" />
+
+    <Button
+        android:text="65"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPreThree"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:onClick="buttonClick"
+        android:visibility="visible"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText"
+        android:layout_alignBaseline="@+id/btnPreTwo"
+        android:layout_alignBottom="@+id/btnPreTwo"
+        android:layout_toStartOf="@+id/btnPreFour"
+        android:layout_marginEnd="7dp" />
 
 </RelativeLayout>
