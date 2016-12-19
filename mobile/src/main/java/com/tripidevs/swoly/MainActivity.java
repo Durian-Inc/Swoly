@@ -1,7 +1,6 @@
 package com.tripidevs.swoly;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,8 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -59,9 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            //Creating a new intent for the settings activity
-            Intent i = new Intent(this, Settings.class);
-            startActivity(i);
             return true;
         }
 
@@ -71,16 +65,16 @@ public class MainActivity extends AppCompatActivity {
     public void buttonClick(View view) {
         Button button = (Button) view;
         EditText sides = (EditText) findViewById(id.txtBoxEachSide);
-//        EditText MaxWeight = (EditText) findViewById(id.editTxtMaxWeight);
+        EditText MaxWeight = (EditText) findViewById(id.editTxtMaxWeight);
         float eachSideWeight;
         int maxWeight;
         float percentage = Float.parseFloat(button.getText().toString())/100;
         Context context = view.getContext();
         try
         {
-//            maxWeight = Integer.parseInt(MaxWeight.getText().toString());
-//            eachSideWeight = ((maxWeight*percentage)-45)/2;
-//            sides.setText(String.valueOf(eachSideWeight));
+            maxWeight = Integer.parseInt(MaxWeight.getText().toString());
+            eachSideWeight = ((maxWeight*percentage)-45)/2;
+            sides.setText(String.valueOf(eachSideWeight));
         }
         catch(Exception e)
         {
