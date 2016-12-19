@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClick(View view) {
+        //Button click method
         Button button = (Button) view;
         EditText sides = (EditText) findViewById(id.txtBoxEachSide);
         EditText MaxWeight = (EditText) findViewById(id.editTxtMaxWeight);
