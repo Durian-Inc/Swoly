@@ -11,7 +11,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.tripidevs.swoly.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:background="@color/background">
 
     <EditText
         android:layout_width="wrap_content"
@@ -30,7 +31,8 @@
         tools:ignore="LabelFor"
         android:maxLines="1"
         android:hint="@string/_10lbs"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textColor="@color/textColor" />
 
     <TextView
         android:text="Each side:"
@@ -42,7 +44,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="36sp"
-        android:textAlignment="textStart" />
+        android:textAlignment="textStart"
+        android:textColor="@color/textColor" />
 
     <TextView
         android:text="@string/max_weight"
@@ -52,18 +55,8 @@
         android:id="@+id/textView3"
         android:textSize="36sp"
         android:layout_below="@+id/btnPreTwo"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="Presets %:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/textView2"
-        tools:ignore="HardcodedText"
-        android:textSize="36sp"
-        android:layout_below="@+id/txtBoxEachSide"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/textColor" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -79,7 +72,8 @@
         android:layout_below="@+id/textView3"
         android:layout_alignEnd="@+id/txtBoxEachSide"
         android:layout_marginEnd="6dp"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:textColor="@color/textColor"/>
 
     <Button
         android:text="70"
@@ -92,7 +86,8 @@
         tools:ignore="HardcodedText"
         android:layout_alignBaseline="@+id/btnPreThree"
         android:layout_alignBottom="@+id/btnPreThree"
-        android:layout_toEndOf="@+id/textView3" />
+        android:layout_toEndOf="@+id/textView3"
+        android:textColor="@color/textColor"/>
 
     <Button
         android:text="55"
@@ -107,22 +102,8 @@
         tools:ignore="HardcodedText"
         android:layout_alignBaseline="@+id/btnPreTwo"
         android:layout_alignBottom="@+id/btnPreTwo"
-        android:layout_toStartOf="@+id/textView3" />
-
-    <Button
-        android:text="60"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnPreTwo"
-        android:visibility="visible"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_marginTop="30dp"
-        tools:ignore="DuplicateIds,HardcodedText"
-        android:onClick="buttonClick"
-        android:textSize="24sp"
-        android:layout_below="@+id/textView2"
-        android:layout_toEndOf="@+id/btnPreOne"
-        android:layout_marginStart="8dp" />
+        android:layout_toStartOf="@+id/textView3"
+        android:textColor="@color/textColor"/>
 
     <Button
         android:text="65"
@@ -137,6 +118,35 @@
         android:layout_alignBaseline="@+id/btnPreTwo"
         android:layout_alignBottom="@+id/btnPreTwo"
         android:layout_toStartOf="@+id/btnPreFour"
-        android:layout_marginEnd="7dp" />
+        android:layout_marginEnd="7dp"
+        android:textColor="@color/textColor"/>
+
+    <TextView
+        android:text="Presets %:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/textView2"
+        tools:ignore="HardcodedText"
+        android:textSize="36sp"
+        android:layout_below="@+id/txtBoxEachSide"
+        android:layout_alignStart="@+id/textView"
+        android:textColor="@color/textColor" />
+
+    <Button
+        android:text="60"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPreTwo"
+        android:visibility="visible"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginTop="30dp"
+        tools:ignore="DuplicateIds,HardcodedText"
+        android:onClick="buttonClick"
+        android:textSize="24sp"
+        android:layout_marginStart="6dp"
+        android:layout_below="@+id/textView2"
+        android:layout_toEndOf="@+id/btnPreOne"
+        android:textColor="@color/textColor" />
 
 </RelativeLayout>
