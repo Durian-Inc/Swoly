@@ -22,7 +22,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/imageButton3"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        android:onClick="switchActivity" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -71,7 +72,8 @@
         android:layout_marginRight="-50dp"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:elevation="20dp" />
+        android:elevation="20dp"
+        android:onClick="changeWeight" />
 
     <View
         android:background="@drawable/circleplus"
@@ -81,7 +83,8 @@
         android:layout_marginLeft="-50dp"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:elevation="20dp" />
+        android:elevation="20dp"
+        android:onClick="changeWeight" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -137,7 +140,7 @@
         android:layout_toStartOf="@+id/textView3"
         android:layout_marginEnd="19dp"
         android:layout_marginBottom="27dp"
-        android:id="@+id/btn55"
+        android:id="@+id/button"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:background="@color/presetColor"
         android:textSize="24dp"
@@ -156,10 +159,9 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/txtMaxWeight"
-        tools:text="999"
         android:elevation="30dp"
         android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
         android:textSize="36sp"
-        android:text="999" />
+        android:text="135" />
 
 </RelativeLayout>
