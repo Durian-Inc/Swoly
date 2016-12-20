@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            //Creating a new intent for the settings activity
             Intent i = new Intent(this, Settings.class);
             startActivity(i);
             return true;
