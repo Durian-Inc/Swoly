@@ -5,6 +5,7 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
+<<<<<<< HEAD
         android:title="@string/action_settings" />
     <item
         android:id="@+id/action_dark"
@@ -13,4 +14,8 @@
         app:showAsAction="never"
         />
 
+=======
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+>>>>>>> parent of 5dd1e33... Changed the api version to 21
 </menu>
