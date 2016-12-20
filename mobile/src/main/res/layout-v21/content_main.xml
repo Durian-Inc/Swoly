@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.tripidevs.swoly.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:background="@color/colorPrimary"
+    android:elevation="16dp">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_settings_white_24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageButton3"
+        android:background="@color/colorPrimary"
+        android:onClick="switchActivity" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName|number|numberDecimal"
+        android:ems="10"
+        android:id="@+id/txtBoxEachSide"
+        android:textAlignment="center"
+        android:textStyle="normal|bold"
+        android:textColor="@color/textColor"
+        android:clickable="false"
+        android:text="10.0"
+        android:enabled="false"
+        android:layout_below="@+id/appTitle"
+        android:layout_alignParentStart="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textSize="100sp" />
+
+    <TextView
+        android:text="lbs (per side)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textSize="22dp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textColor="@color/textColor2"
+        android:layout_alignBottom="@+id/txtBoxEachSide"
+        android:layout_centerHorizontal="true" />
+
+    <View android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:background="@drawable/circleaccent"
+        android:id="@+id/accentcircle"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:elevation="30dp"
+        android:clickable="true" />
+
+    <View
+        android:background="@drawable/circleminus"
+        android:id="@+id/minuscircle"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/accentcircle"
+        android:layout_marginRight="-50dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:elevation="20dp"
+        android:onClick="changeWeight" />
+
+    <View
+        android:background="@drawable/circleplus"
+        android:id="@+id/pluscircle"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/accentcircle"
+        android:layout_marginLeft="-50dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:elevation="20dp"
+        android:onClick="changeWeight" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_remove_white_36dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="-38dp"
+        android:elevation="20dp"
+        android:id="@+id/minus"
+        android:layout_alignStart="@+id/accentcircle" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_add_white_36dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="-38dp"
+        android:elevation="20dp"
+        android:id="@+id/plus"
+        android:layout_alignEnd="@+id/accentcircle" />
+
+    <TextView
+        android:text="Swoly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appTitle"
+        android:fontFamily="sans-serif"
+        android:textSize="44dp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/textColor"
+        android:layout_below="@+id/imageButton3"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:id="@+id/textView3"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="18dp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/textColor2"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="27dp"
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@color/presetColor"
+        android:textSize="24dp"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:textColorLink="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:minHeight="42dp"
+        android:minWidth="52dp"
+        android:onClick="percentageClick" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txtMaxWeight"
+        android:elevation="30dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
+        android:textSize="36sp"
+        android:text="135" />
+
+</RelativeLayout>
