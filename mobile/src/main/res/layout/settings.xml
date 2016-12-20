@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
-    <TextView
-        android:text="Settings:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:layout_weight="1"
-        tools:ignore="HardcodedText,InefficientWeight" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="310dp">
+
+        <Switch
+            android:text="Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/switch1"
+            android:textColor="@color/textColor"/>
+
+        <Switch
+            android:text="Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/switch1"
+            android:layout_alignEnd="@+id/switch1"
+            android:layout_marginTop="29dp"
+            android:id="@+id/switch2"
+            android:textColor="@color/textColor"
+            />
+
+        <Switch
+            android:text="Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/switch2"
+            android:layout_alignEnd="@+id/switch2"
+            android:layout_marginTop="32dp"
+            android:id="@+id/switch3"
+            android:textColor="@color/textColor"
+            />
+    </RelativeLayout>
 </LinearLayout>
