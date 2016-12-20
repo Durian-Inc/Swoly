@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText eachSide = (EditText) findViewById(id.txtBoxEachSide);
+//        EditText eachSide = (EditText) findViewById(id.txtBoxEachSide);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonClick(View view) {
         Button button = (Button) view;
-        EditText sides = (EditText) findViewById(id.txtBoxEachSide);
+//        EditText sides = (EditText) findViewById(id.txtBoxEachSide);
 //        EditText MaxWeight = (EditText) findViewById(id.editTxtMaxWeight);
         float eachSideWeight;
         int maxWeight;
