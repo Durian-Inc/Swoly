@@ -9,7 +9,7 @@
     <item
         android:id="@+id/action_dark"
         android:orderInCategory="200"
-        android:title="@string/light_or_dark"
+        android:title="Light or Dark"
         app:showAsAction="never"
         />
 
