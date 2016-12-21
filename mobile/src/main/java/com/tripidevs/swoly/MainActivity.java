@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void switchActivity(View v) {
-        Intent i = new Intent(this, Settings.class);
-        startActivity(i);
+        Intent intentSettings = new Intent(this, Settings.class);
+        startActivity(intentSettings);
     }
 
     /**
