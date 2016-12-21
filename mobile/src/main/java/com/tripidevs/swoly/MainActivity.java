@@ -98,12 +98,18 @@ public class MainActivity extends AppCompatActivity {
         currWeight.setText(String.valueOf(curr));
     }
 
-
+    //Function to switch the activity to settings
     public void switchActivity(View v) {
         Intent intentSettings = new Intent(this, Settings.class);
         startActivity(intentSettings);
     }
 
+    //Function to call the custom alert dialog
+    public void customPercentClick(View v)
+    {
+        customPercent dialog = new customPercent();
+        dialog.show(getFragmentManager(), "custom_dialog");
+    }
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
