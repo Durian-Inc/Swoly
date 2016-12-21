@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
@@ -13,50 +14,58 @@
         android:weightSum="1">
 
         <TextView
-            android:text="Swoly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/apptitle"
-            android:textStyle="normal|bold"
-            android:textColor="@color/textColor"
-            android:textAlignment="center"
-            android:layout_above="@+id/editText"
-            android:layout_centerHorizontal="true"
-            android:textSize="38dp" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
             android:text="10.0"
-            android:ems="10"
-            android:id="@+id/editText"
-            android:textStyle="normal|bold"
+            android:id="@+id/txtEachSide"
+            android:textStyle="bold"
             android:textColor="@color/textColor"
             android:textSize="100sp"
             android:textAlignment="center"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="30dp"
             android:clickable="false"
             android:enabled="false"
             android:focusable="false"
             android:longClickable="false"
             android:linksClickable="false"
-            android:textIsSelectable="false"
-            android:textAllCaps="false" />
+            android:textIsSelectable="false" />
 
         <TextView
-            android:text="lbs (per side)"
+            android:text="Swoly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/apptitle"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            android:textAlignment="center"
+            android:layout_above="@id/txtEachSide"
+            android:layout_centerHorizontal="true"
+            android:textSize="38dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lbs (per side)"
             android:id="@+id/textView7"
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/textColor2"
-            android:textSize="20dp"
-            android:layout_alignBottom="@id/editText"
+            android:textSize="22dp"
+            android:layout_below="@id/txtEachSide"
+            android:layout_marginTop="-32dp"
             android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_settings_white_24dp"
+            android:layout_marginEnd="14dp"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -67,16 +76,14 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/circleaccent"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:id="@+id/accentcircle"
-            android:minHeight="120dp"
-            android:minWidth="120dp"
-            android:maxWidth="140dp"
-            android:maxHeight="140dp"
-            android:elevation="25dp" />
+            android:adjustViewBounds="true"
+            android:elevation="25dp"
+            android:clickable="true" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -86,10 +93,10 @@
             android:layout_alignStart="@id/accentcircle"
             android:layout_marginStart="-40dp"
             android:id="@+id/minuscircle"
-            android:minHeight="100dp"
-            android:minWidth="100dp"
-            android:maxWidth="120dp"
-            android:maxHeight="120dp"
+            android:minHeight="110dp"
+            android:minWidth="110dp"
+            android:maxWidth="130dp"
+            android:maxHeight="130dp"
             android:elevation="20dp" />
 
         <ImageView
@@ -100,19 +107,54 @@
             android:layout_alignEnd="@id/accentcircle"
             android:layout_marginEnd="-40dp"
             android:id="@+id/pluscircle"
-            android:minHeight="100dp"
-            android:minWidth="100dp"
-            android:maxWidth="120dp"
-            android:maxHeight="120dp"
+            android:minHeight="110dp"
+            android:minWidth="110dp"
+            android:maxWidth="130dp"
+            android:maxHeight="130dp"
             android:elevation="20dp" />
 
-        <TextView
-            android:text="TextView"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
+            app:srcCompat="@drawable/ic_remove_white_36dp"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/accentcircle" />
+            android:layout_toStartOf="@+id/accentcircle"
+            android:id="@+id/imageView3"
+            android:elevation="21dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_add_white_36dp"
+            android:id="@+id/imageView2"
+            android:elevation="21dp"
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_toEndOf="@+id/accentcircle" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/maxweight"
+            android:elevation="26dp"
+            android:text="135"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            android:textSize="52dp"
+            android:clickable="false"
+            android:background="@android:color/transparent"
+            android:contextClickable="false"
+            android:editable="false"
+            android:longClickable="false"
+            android:linksClickable="false"
+            android:selectAllOnFocus="true"
+            android:textIsSelectable="false"
+            android:enabled="false" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -140,12 +182,11 @@
             android:textColor="@color/textColor"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:background="@color/presetColor"
+            android:background="?android:selectableItemBackground"
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset2"
             android:layout_alignBottom="@+id/preset2"
-            android:layout_toStartOf="@+id/preset2"
-            android:onClick="buttonClick (MainActivity)" />
+            android:layout_toStartOf="@+id/preset2" />
 
         <Button
             android:text="60"
@@ -157,12 +198,26 @@
             android:textColor="@color/textColor"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:background="@color/presetColor"
+            android:background="?android:selectableItemBackground"
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset3"
             android:layout_alignBottom="@+id/preset3"
-            android:layout_toStartOf="@+id/preset3"
-            android:onClick="buttonClick (MainActivity)" />
+            android:layout_toStartOf="@+id/preset3" />
+
+        <Button
+            android:text="65"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/preset3"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
+            android:textSize="26sp"
+            android:textColor="@color/textColor"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:background="?android:selectableItemBackground"
+            android:minWidth="54dip"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:text="70"
@@ -174,11 +229,10 @@
             android:textColor="@color/textColor"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:background="@color/presetColor"
+            android:background="?android:selectableItemBackground"
             android:minWidth="54dip"
             android:layout_alignTop="@+id/preset3"
-            android:layout_toEndOf="@+id/preset3"
-            android:onClick="buttonClick (MainActivity)" />
+            android:layout_toEndOf="@+id/preset3" />
 
         <Button
             android:text="75"
@@ -190,12 +244,11 @@
             android:textColor="@color/textColor"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:background="@color/presetColor"
+            android:background="?android:selectableItemBackground"
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset4"
             android:layout_alignBottom="@+id/preset4"
-            android:layout_toEndOf="@+id/preset4"
-            android:onClick="buttonClick (MainActivity)" />
+            android:layout_toEndOf="@+id/preset4" />
 
         <TextView
             android:text="%"
@@ -221,22 +274,6 @@
             android:layout_marginBottom="10dp"
             android:layout_above="@+id/preset2"
             android:layout_toStartOf="@+id/preset4" />
-
-        <Button
-            android:text="65"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/preset3"
-            style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
-            android:textSize="26sp"
-            android:textColor="@color/textColor"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:background="@color/presetColor"
-            android:minWidth="54dip"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:onClick="buttonClick (MainActivity)" />
 
     </RelativeLayout>
 
