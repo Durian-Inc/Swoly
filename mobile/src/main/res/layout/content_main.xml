@@ -134,7 +134,7 @@
             android:layout_toEndOf="@+id/accentcircle" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
@@ -148,14 +148,14 @@
             android:clickable="false"
             android:background="@android:color/transparent"
             android:contextClickable="false"
-            android:editable="false"
             android:longClickable="false"
             android:linksClickable="false"
             android:selectAllOnFocus="true"
             android:textIsSelectable="false"
-            android:enabled="false"
+            android:enabled="true"
             android:layout_centerVertical="true"
-            android:layout_alignParentStart="true" />
+            android:layout_centerHorizontal="true"
+            android:maxLines="1" />
 
     </RelativeLayout>
 
@@ -172,7 +172,8 @@
             android:layout_toEndOf="@+id/presetstext"
             android:layout_alignTop="@+id/presetstext"
             android:layout_marginStart="3dp"
-            android:id="@+id/presetedit" />
+            android:id="@+id/presetedit"
+            android:onClick="customPercentClick"/>
 
         <Button
             android:text="55"
