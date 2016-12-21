@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -11,9 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
@@ -38,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
         EditText eachSide = (EditText) findViewById(id.txtBoxEachSide);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -71,15 +82,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //Function for the percentage buttons
-    public void percentageClick(View v) {
-        Button button = (Button) v;
+    public void buttonClick(View view) {
+        Button button = (Button) view;
         EditText sides = (EditText) findViewById(id.txtBoxEachSide);
-        TextView MaxWeight = (TextView) findViewById(id.txtMaxWeight);
+        EditText MaxWeight = (EditText) findViewById(id.editTxtMaxWeight);
         float eachSideWeight;
         int maxWeight;
         float percentage = Float.parseFloat(button.getText().toString())/100;
-        Context context = v.getContext();
+        Context context = view.getContext();
         try
         {
             maxWeight = Integer.parseInt(MaxWeight.getText().toString());
@@ -94,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
     //Method for adding and subtracting weight
     public void changeWeight(View v)
     {
@@ -115,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentSettings);
     }
 
+=======
+>>>>>>> parent of 575fd98... New UI buttons are working
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
