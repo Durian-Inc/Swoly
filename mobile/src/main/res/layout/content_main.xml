@@ -20,7 +20,7 @@
             android:textStyle="normal|bold"
             android:textColor="@color/textColor"
             android:textAlignment="center"
-            android:layout_above="@id/editText"
+            android:layout_above="@+id/editText"
             android:layout_centerHorizontal="true"
             android:textSize="38dp" />
 
@@ -144,7 +144,8 @@
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset2"
             android:layout_alignBottom="@+id/preset2"
-            android:layout_toStartOf="@+id/preset2" />
+            android:layout_toStartOf="@+id/preset2"
+            android:onClick="buttonClick (MainActivity)" />
 
         <Button
             android:text="60"
@@ -160,22 +161,8 @@
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset3"
             android:layout_alignBottom="@+id/preset3"
-            android:layout_toStartOf="@+id/preset3" />
-
-        <Button
-            android:text="65"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/preset3"
-            style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
-            android:textSize="26sp"
-            android:textColor="@color/textColor"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:background="@color/presetColor"
-            android:minWidth="54dip"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_toStartOf="@+id/preset3"
+            android:onClick="buttonClick (MainActivity)" />
 
         <Button
             android:text="70"
@@ -190,7 +177,8 @@
             android:background="@color/presetColor"
             android:minWidth="54dip"
             android:layout_alignTop="@+id/preset3"
-            android:layout_toEndOf="@+id/preset3" />
+            android:layout_toEndOf="@+id/preset3"
+            android:onClick="buttonClick (MainActivity)" />
 
         <Button
             android:text="75"
@@ -206,7 +194,8 @@
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset4"
             android:layout_alignBottom="@+id/preset4"
-            android:layout_toEndOf="@+id/preset4" />
+            android:layout_toEndOf="@+id/preset4"
+            android:onClick="buttonClick (MainActivity)" />
 
         <TextView
             android:text="%"
@@ -232,6 +221,22 @@
             android:layout_marginBottom="10dp"
             android:layout_above="@+id/preset2"
             android:layout_toStartOf="@+id/preset4" />
+
+        <Button
+            android:text="65"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/preset3"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
+            android:textSize="26sp"
+            android:textColor="@color/textColor"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:background="@color/presetColor"
+            android:minWidth="54dip"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="buttonClick (MainActivity)" />
 
     </RelativeLayout>
 
