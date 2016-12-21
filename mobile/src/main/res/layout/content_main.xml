@@ -20,7 +20,7 @@
             android:textStyle="normal|bold"
             android:textColor="@color/textColor"
             android:textAlignment="center"
-            android:layout_above="@+id/editText"
+            android:layout_above="@id/editText"
             android:layout_centerHorizontal="true"
             android:textSize="38dp" />
 
@@ -37,18 +37,25 @@
             android:textAlignment="center"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:clickable="false"
+            android:enabled="false"
+            android:focusable="false"
+            android:longClickable="false"
+            android:linksClickable="false"
+            android:textIsSelectable="false"
+            android:textAllCaps="false" />
 
         <TextView
             android:text="lbs (per side)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView7"
-            android:textStyle="normal|bold"
+            android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/textColor2"
             android:textSize="20dp"
-            android:layout_alignBottom="@+id/editText"
+            android:layout_alignBottom="@id/editText"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
@@ -57,6 +64,55 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/circleaccent"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/accentcircle"
+            android:minHeight="120dp"
+            android:minWidth="120dp"
+            android:maxWidth="140dp"
+            android:maxHeight="140dp"
+            android:elevation="25dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/circleminus"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@id/accentcircle"
+            android:layout_marginStart="-40dp"
+            android:id="@+id/minuscircle"
+            android:minHeight="100dp"
+            android:minWidth="100dp"
+            android:maxWidth="120dp"
+            android:maxHeight="120dp"
+            android:elevation="20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/circleplus"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@id/accentcircle"
+            android:layout_marginEnd="-40dp"
+            android:id="@+id/pluscircle"
+            android:minHeight="100dp"
+            android:minWidth="100dp"
+            android:maxWidth="120dp"
+            android:maxHeight="120dp"
+            android:elevation="20dp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/accentcircle" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -71,7 +127,7 @@
             app:srcCompat="@drawable/ic_edit_white_24dp"
             android:layout_toEndOf="@+id/presetstext"
             android:layout_alignTop="@+id/presetstext"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
             android:id="@+id/presetedit" />
 
         <Button
