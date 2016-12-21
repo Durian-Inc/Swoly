@@ -1,9 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="_10">10</string>
-    <string name="_55">55%</string>
-    <string name="_65">65%</string>
-    <string name="_70">70%</string>
-    <string name="_10lbs">10lbs</string>
-    <string name="max_weight">Max Weight:</string>
 </resources>
