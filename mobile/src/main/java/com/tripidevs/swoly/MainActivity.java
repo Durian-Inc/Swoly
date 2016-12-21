@@ -111,8 +111,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void switchActivity(View v) {
+<<<<<<< HEAD
         Intent intentSettings = new Intent(this, Settings.class);
         startActivity(intentSettings);
+=======
+        Intent i = new Intent(this, Settings.class);
+        startActivity(i);
+>>>>>>> fc339334a1703de0036c63ee2aa2015af227ef77
     }
 
     /**
