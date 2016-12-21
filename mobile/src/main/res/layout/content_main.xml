@@ -1,6 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
@@ -65,7 +64,8 @@
             android:id="@+id/imageView"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="15dp"
+            android:onClick="switchActivity"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -97,7 +97,8 @@
             android:minWidth="110dp"
             android:maxWidth="130dp"
             android:maxHeight="130dp"
-            android:elevation="20dp" />
+            android:elevation="20dp"
+            android:onClick="changeWeight" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -111,7 +112,8 @@
             android:minWidth="110dp"
             android:maxWidth="130dp"
             android:maxHeight="130dp"
-            android:elevation="20dp" />
+            android:elevation="20dp"
+            android:onClick="changeWeight" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -136,8 +138,6 @@
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
             android:id="@+id/maxweight"
             android:elevation="26dp"
             android:text="135"
@@ -153,7 +153,9 @@
             android:linksClickable="false"
             android:selectAllOnFocus="true"
             android:textIsSelectable="false"
-            android:enabled="false" />
+            android:enabled="false"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 
@@ -186,7 +188,8 @@
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset2"
             android:layout_alignBottom="@+id/preset2"
-            android:layout_toStartOf="@+id/preset2" />
+            android:layout_toStartOf="@+id/preset2"
+            android:onClick="percentageClick" />
 
         <Button
             android:text="60"
@@ -202,7 +205,8 @@
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset3"
             android:layout_alignBottom="@+id/preset3"
-            android:layout_toStartOf="@+id/preset3" />
+            android:layout_toStartOf="@+id/preset3"
+            android:onClick="percentageClick" />
 
         <Button
             android:text="65"
@@ -217,22 +221,8 @@
             android:background="?android:selectableItemBackground"
             android:minWidth="54dip"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:text="70"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/preset4"
-            style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
-            android:textSize="26sp"
-            android:textColor="@color/textColor"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:background="?android:selectableItemBackground"
-            android:minWidth="54dip"
-            android:layout_alignTop="@+id/preset3"
-            android:layout_toEndOf="@+id/preset3" />
+            android:layout_centerHorizontal="true"
+            android:onClick="percentageClick" />
 
         <Button
             android:text="75"
@@ -248,7 +238,8 @@
             android:minWidth="54dip"
             android:layout_alignBaseline="@+id/preset4"
             android:layout_alignBottom="@+id/preset4"
-            android:layout_toEndOf="@+id/preset4" />
+            android:layout_toEndOf="@+id/preset4"
+            android:onClick="percentageClick" />
 
         <TextView
             android:text="%"
@@ -274,6 +265,23 @@
             android:layout_marginBottom="10dp"
             android:layout_above="@+id/preset2"
             android:layout_toStartOf="@+id/preset4" />
+
+        <Button
+            android:text="70"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/preset4"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
+            android:textSize="26sp"
+            android:textColor="@color/textColor"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:background="?android:selectableItemBackground"
+            android:minWidth="54dip"
+            android:layout_alignBaseline="@+id/preset3"
+            android:layout_alignBottom="@+id/preset3"
+            android:layout_toEndOf="@+id/preset3"
+            android:onClick="percentageClick" />
 
     </RelativeLayout>
 

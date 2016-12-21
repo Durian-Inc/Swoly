@@ -1,17 +1,25 @@
 package com.tripidevs.swoly;
 
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import static com.tripidevs.swoly.R.id;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,11 +62,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-    public void buttonClick(View view) {
+    public void percentageClick(View view) {
         Button button = (Button) view;
-        //EditText sides = (EditText) findViewById(id.txtBoxEachSide);
-        //EditText MaxWeight = (EditText) findViewById(id.editTxtMaxWeight);
+        TextView sides = (TextView) findViewById(id.txtEachSide);
+        EditText MaxWeight = (EditText) findViewById(id.maxweight);
         float eachSideWeight;
         int maxWeight;
         float percentage = Float.parseFloat(button.getText().toString())/100;
@@ -81,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     {
         boolean plus = v.equals(findViewById(id.pluscircle));
         int curr = 0;
-        //TextView currWeight = (TextView) findViewById(id.txtMaxWeight);
+        EditText currWeight = (EditText) findViewById(id.maxweight);
         curr = Integer.parseInt(currWeight.getText().toString());
         if(plus)
             curr+=5;
@@ -96,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intentSettings = new Intent(this, Settings.class);
         startActivity(intentSettings);
     }
-    */
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
