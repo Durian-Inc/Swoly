@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //Method for adding and subtracting weight
     public void changeWeight(View v)
     {
@@ -126,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentSettings);
     }
 
+=======
+>>>>>>> parent of 575fd98... New UI buttons are working
 =======
 >>>>>>> parent of 575fd98... New UI buttons are working
     /**
