@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         //Setting the value of the current percentage text equal to the current percent
         //Displaying only two decimal places using string format function
         TextView currentPercent = (TextView) findViewById(id.txtCurrentPercent);
-        currentPercent.setText(String.format("%.2f", Constant.percent*100));
+        currentPercent.setText(String.valueOf(Math.round(Constant.percent*100)));
     }
 
     //Function that will switch the main activity to the settings activity
