@@ -58,39 +58,62 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //Function to change the weight when the plus or minus buttons are pressed
     public void changeWeight(View v)
     {
+        //Bool to check which button is pressed
+        //True if plus
+        //False if minus
         boolean plus = v.equals(findViewById(id.pluscircle));
+        //Max weight text box
         EditText maxWeight = (EditText) findViewById(id.maxweight);
         if(plus)
-            Constant.max+=5;
+            Constant.max+=5;    //Adding five to the max value
         if (!plus&&(((((Constant.max)-5) * Constant.percent) - 45) / 2) > 0)
-            Constant.max-=5;
+            Constant.max-=5;    //Subtracting five from the max value if the value is grater than 0
+        //Setting the text value of the max weight to the value from the constants
         maxWeight.setText(String.valueOf(Constant.max));
+        //Calling the function to refresh the value of the each side text
         refreshEachSide();
     }
 
+    //Function to determine change weight when a preset percentage is clicked
     public void percentageClick(View view) {
+        //Button object for the button pressed
         Button percent = (Button) view;
+        //Changing the value of the constant percentage
         if ((((Constant.max * Constant.percent) - 45) / 2)>0)
             Constant.percent = (Float.parseFloat(percent.getText().toString()))/100;
-        refreshEachSide();
+        refreshEachSide();  //Refreshing the sides text value
     }
 
-    //Function to switch the activity to settings
+    //Function to refresh the value of the each sides text
     public void refreshEachSide() {
+        //Object to hold the value of the each side text
         TextView sides = (TextView) findViewById(id.txtEachSide);
+        //Double to hold the value of each side
         double eachSideWeight;
+        //Setting each side double equal to the result of the appropriate function
+        //((Maxweight*percentage)-barweight)/2
         eachSideWeight = ((Constant.max * Constant.percent) - 45) / 2;
+        //Checking the value of each side
+        //If greater than 0 then value of each side text is changed accordingly
+        //Else toast displaying "Please lift more is displayed"
         if (eachSideWeight > 0)
-            sides.setText(String.valueOf(eachSideWeight));
+            sides.setText(String.format("%.2f", eachSideWeight));
         else {
             CharSequence msg = "Please lift more";
             Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
             toast.show();
         }
+
+        //Setting the value of the current percentage text equal to the current percent
+        //Displaying only two decimal places using string format function
+        TextView currentPercent = (TextView) findViewById(id.txtCurrentPercent);
+        currentPercent.setText(String.format("%.2f", Constant.percent*100));
     }
 
+    //Function that will switch the main activity to the settings activity
     public void switchActivity(View v) {
         Intent intentSettings = new Intent(this, Settings.class);
         startActivity(intentSettings);
@@ -99,7 +122,9 @@ public class MainActivity extends AppCompatActivity {
     //Function to call the custom alert dialog
     public void customPercentClick(View v)
     {
+        //Creating a new instance of the customPercent class
         customPercent dialog = new customPercent();
+        //Showing the dialog
         dialog.show(getFragmentManager(), "custom_dialog");
     }
 
