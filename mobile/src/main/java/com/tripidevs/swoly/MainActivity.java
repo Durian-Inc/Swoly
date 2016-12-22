@@ -1,11 +1,9 @@
 package com.tripidevs.swoly;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -62,43 +58,39 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void percentageClick(View view) {
-        Button button = (Button) view;
-        TextView sides = (TextView) findViewById(id.txtEachSide);
-        EditText MaxWeight = (EditText) findViewById(id.maxweight);
-        float eachSideWeight;
-        int maxWeight;
-        float percentage = Float.parseFloat(button.getText().toString())/100;
-        Context context = view.getContext();
-        try
-        {
-            maxWeight = Integer.parseInt(MaxWeight.getText().toString());
-            eachSideWeight = ((maxWeight*percentage)-45)/2;
-            sides.setText(String.valueOf(eachSideWeight));
-        }
-        catch(Exception e)
-        {
-            CharSequence msg = "Please enter a number";
-            Toast toast = Toast.makeText(context, msg, Toast.LENGTH_LONG);
-            toast.show();
-        }
-    }
-    //Method for adding and subtracting weight
     public void changeWeight(View v)
     {
         boolean plus = v.equals(findViewById(id.pluscircle));
-        int curr = 0;
-        EditText currWeight = (EditText) findViewById(id.maxweight);
-        curr = Integer.parseInt(currWeight.getText().toString());
+        EditText maxWeight = (EditText) findViewById(id.maxweight);
         if(plus)
-            curr+=5;
-        else
-            curr-=5;
+            Constant.max+=5;
+        if (!plus&&(((((Constant.max)-5) * Constant.percent) - 45) / 2) > 0)
+            Constant.max-=5;
+        maxWeight.setText(String.valueOf(Constant.max));
+        refreshEachSide();
+    }
 
-        currWeight.setText(String.valueOf(curr));
+    public void percentageClick(View view) {
+        Button percent = (Button) view;
+        if ((((Constant.max * Constant.percent) - 45) / 2)>0)
+            Constant.percent = (Float.parseFloat(percent.getText().toString()))/100;
+        refreshEachSide();
     }
 
     //Function to switch the activity to settings
+    public void refreshEachSide() {
+        TextView sides = (TextView) findViewById(id.txtEachSide);
+        double eachSideWeight;
+        eachSideWeight = ((Constant.max * Constant.percent) - 45) / 2;
+        if (eachSideWeight > 0)
+            sides.setText(String.valueOf(eachSideWeight));
+        else {
+            CharSequence msg = "Please lift more";
+            Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
+            toast.show();
+        }
+    }
+
     public void switchActivity(View v) {
         Intent intentSettings = new Intent(this, Settings.class);
         startActivity(intentSettings);
@@ -110,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         customPercent dialog = new customPercent();
         dialog.show(getFragmentManager(), "custom_dialog");
     }
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.

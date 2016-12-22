@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10.0"
+            android:text="@string/default_side"
             android:id="@+id/txtEachSide"
             android:textStyle="bold"
             android:textColor="@color/textColor"
@@ -32,7 +32,7 @@
             android:textIsSelectable="false" />
 
         <TextView
-            android:text="Swoly"
+            android:text="@string/app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/apptitle"
@@ -41,22 +41,23 @@
             android:textAlignment="center"
             android:layout_above="@id/txtEachSide"
             android:layout_centerHorizontal="true"
-            android:textSize="38dp" />
+            android:textSize="38sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="lbs (per side)"
+            android:text="@string/lbs_tip"
             android:id="@+id/textView7"
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/textColor2"
-            android:textSize="22dp"
+            android:textSize="22sp"
             android:layout_below="@id/txtEachSide"
             android:layout_marginTop="-32dp"
             android:layout_centerHorizontal="true" />
 
         <ImageView
+            android:contentDescription="@string/cog_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_settings_white_24dp"
@@ -75,6 +76,7 @@
         android:layout_weight="1" >
 
         <ImageView
+            android:contentDescription="@string/accentcircle_desc"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/circleaccent"
@@ -86,6 +88,7 @@
             android:clickable="true" />
 
         <ImageView
+            android:contentDescription="@string/minuscircle_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/circleminus"
@@ -101,6 +104,7 @@
             android:onClick="changeWeight" />
 
         <ImageView
+            android:contentDescription="@string/pluscircle_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/circleplus"
@@ -116,6 +120,7 @@
             android:onClick="changeWeight" />
 
         <ImageView
+            android:contentDescription="@string/minus_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_remove_white_36dp"
@@ -125,6 +130,7 @@
             android:elevation="21dp" />
 
         <ImageView
+            android:contentDescription="@string/plus_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_add_white_36dp"
@@ -134,28 +140,28 @@
             android:layout_toEndOf="@+id/accentcircle" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
             android:id="@+id/maxweight"
             android:elevation="26dp"
-            android:text="135"
+            android:text="@string/default_max"
             android:textAlignment="center"
             android:textStyle="bold"
             android:textColor="@color/textColor"
-            android:textSize="52dp"
+            android:textSize="52sp"
             android:clickable="false"
             android:background="@android:color/transparent"
-            android:contextClickable="false"
             android:longClickable="false"
             android:linksClickable="false"
             android:selectAllOnFocus="true"
             android:textIsSelectable="false"
-            android:enabled="true"
+            android:enabled="false"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:maxLines="1" />
+            android:layout_alignParentStart="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
 
     </RelativeLayout>
 
@@ -166,6 +172,7 @@
         android:layout_weight=".8" >
 
         <ImageView
+            android:contentDescription="@string/custompreset_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_edit_white_24dp"
@@ -173,10 +180,10 @@
             android:layout_alignTop="@+id/presetstext"
             android:layout_marginStart="3dp"
             android:id="@+id/presetedit"
-            android:onClick="customPercentClick"/>
+            android:onClick="customPercentClick" />
 
         <Button
-            android:text="55"
+            android:text="@string/default_preset_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/preset1"
@@ -193,7 +200,7 @@
             android:onClick="percentageClick" />
 
         <Button
-            android:text="60"
+            android:text="@string/default_preset_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/preset2"
@@ -210,7 +217,7 @@
             android:onClick="percentageClick" />
 
         <Button
-            android:text="65"
+            android:text="@string/default_preset_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/preset3"
@@ -226,7 +233,7 @@
             android:onClick="percentageClick" />
 
         <Button
-            android:text="75"
+            android:text="@string/default_preset_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/preset5"
@@ -243,7 +250,7 @@
             android:onClick="percentageClick" />
 
         <TextView
-            android:text="%"
+            android:text="@string/percent_sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -251,24 +258,24 @@
             android:layout_below="@+id/preset3"
             android:layout_centerHorizontal="true"
             android:textStyle="normal|bold"
-            android:textSize="26dp"
+            android:textSize="26sp"
             android:textColor="@color/textColor2" />
 
         <TextView
-            android:text="Presets"
+            android:text="@string/presets_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/presetstext"
             android:textStyle="normal|bold"
             android:textColor="@color/textColor2"
             android:textAlignment="center"
-            android:textSize="22dp"
+            android:textSize="22sp"
             android:layout_marginBottom="10dp"
             android:layout_above="@+id/preset2"
             android:layout_toStartOf="@+id/preset4" />
 
         <Button
-            android:text="70"
+            android:text="@string/default_preset_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/preset4"
