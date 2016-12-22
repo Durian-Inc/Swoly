@@ -169,17 +169,6 @@
         android:layout_height="match_parent"
         android:layout_weight=".8" >
 
-        <TextView
-            android:text="55"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtCurrentPercent"
-            android:textColor="@color/colorAccent"
-            android:textSize="20sp"
-            android:layout_toStartOf="@+id/percentsign"
-            android:layout_below="@+id/preset3"
-            android:layout_marginEnd="1dp"
-            android:layout_marginTop="11dp"/>
         <ImageView
             android:contentDescription="@string/custompreset_desc"
             android:layout_width="wrap_content"
@@ -259,18 +248,6 @@
             android:onClick="percentageClick" />
 
         <TextView
-            android:text="@string/percent_sign"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:id="@+id/percentsign"
-            android:layout_below="@+id/preset3"
-            android:layout_centerHorizontal="true"
-            android:textStyle="normal|bold"
-            android:textSize="26sp"
-            android:textColor="@color/textColor2" />
-
-        <TextView
             android:text="@string/presets_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -299,6 +276,30 @@
             android:layout_alignBottom="@+id/preset3"
             android:layout_toEndOf="@+id/preset3"
             android:onClick="percentageClick" />
+
+        <TextView
+            android:text="@string/percent_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/percentsign"
+            android:textStyle="normal|bold"
+            android:textSize="22sp"
+            android:textColor="@color/textColor2"
+            android:layout_alignBaseline="@+id/txtCurrentPercent"
+            android:layout_alignBottom="@+id/txtCurrentPercent"
+            android:layout_toEndOf="@+id/txtCurrentPercent" />
+
+        <TextView
+            android:text="55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCurrentPercent"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/preset3"
+            android:layout_toEndOf="@+id/preset2"
+            android:layout_marginTop="10dp" />
 
     </RelativeLayout>
 
