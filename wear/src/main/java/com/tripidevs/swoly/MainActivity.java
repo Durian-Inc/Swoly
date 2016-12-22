@@ -53,8 +53,8 @@ public class MainActivity extends Activity {
     public void refreshEachSide() {
         TextView sides = (TextView) findViewById(R.id.eachside);
         double eachSideWeight;
-        eachSideWeight = ((Constant.max * Constant.percent) - 45) / 2;
+        eachSideWeight = (((Constant.max * Constant.percent) - 45) / 2);
         if (eachSideWeight > 0)
-            sides.setText(String.valueOf(eachSideWeight));
+            sides.setText(String.format("%.2f", eachSideWeight)+" lbs");
     }
 }
