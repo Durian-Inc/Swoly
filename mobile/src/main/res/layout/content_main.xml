@@ -161,6 +161,31 @@
             android:layout_centerHorizontal="true"
             android:editable="true" />
 
+        <TextView
+            android:text="Max Weight:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/maxText"
+            android:textColor="@color/textColor"
+            android:elevation="25dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_above="@+id/maxweight"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="lbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lbsText"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:elevation="25dp"
+            android:textColor="@color/textColor"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/minuscircle"
+            android:layout_below="@+id/maxweight" />
+
     </RelativeLayout>
 
     <RelativeLayout

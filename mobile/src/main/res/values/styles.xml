@@ -20,4 +20,8 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Theme.Swoly" parent="@style/AppTheme.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
 </resources>
