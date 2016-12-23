@@ -1,38 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="224dp">
-
-
-        <Switch
-            android:text="Metric"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/metricSwitch"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:textColor="@color/textColor"
-            android:textSize="36sp"
-            android:paddingLeft="30dp"
-            android:switchPadding="10dp" />
-
-        <Switch
-            android:text="Light or Dark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:id="@+id/switchLightDark"
-            android:layout_below="@+id/metricSwitch"
-            android:layout_alignParentStart="true"
-            android:textSize="36sp"
-            android:paddingLeft="30dp"
-            android:textColor="@color/textColor"
-            android:switchPadding="10dp" />
-    </RelativeLayout>
-
-</LinearLayout>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:title="Default Max Weight"
+        android:key="maxDefault"
+        android:summary="Weight to be used at launch"></EditTextPreference>
+    <EditTextPreference android:title="Bar Weight"
+        android:key="barWeight"
+        android:summary="Weight to be used for the bar"></EditTextPreference>
+    <CheckBoxPreference android:title="Incrementation"
+        android:defaultValue="false"
+        android:summary="Increment by 1 instead of the default of 5."
+        android:key="incrementOne" />
+    <ListPreference     android:title="Output format"
+        android:summary="Select what value you want to have outputted."
+        android:key="outputFormat"
+        android:defaultValue="1"
+        android:entries="@array/outputTypes"
+        android:entryValues="@array/listValues" />
+</PreferenceScreen>

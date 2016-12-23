@@ -18,6 +18,7 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.vision.text.Text;
 
 import static com.tripidevs.swoly.R.id;
 
@@ -61,8 +62,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Function to change the weight when the plus or minus buttons are pressed
-    public void changeWeight(View v)
-    {
+    public void changeWeight(View v) {
+        //Code to get text inside accent circle, relating to max weight
+        //then removes both elements from the screen once you interact with it.
+        TextView maxText = (TextView) findViewById(id.maxText);
+        TextView lbsText = (TextView) findViewById(id.lbsText);
+        maxText.setVisibility(View.INVISIBLE);
+        lbsText.setVisibility(View.INVISIBLE);
         //Bool to check which button is pressed
         //True if plus
         //False if minus
@@ -81,6 +87,12 @@ public class MainActivity extends AppCompatActivity {
 
     //Function to determine change weight when a preset percentage is clicked
     public void percentageClick(View view) {
+        //Code to get text inside accent circle, relating to max weight
+        //then removes both elements from the screen once you interact with it.
+        TextView maxText = (TextView) findViewById(id.maxText);
+        TextView lbsText = (TextView) findViewById(id.lbsText);
+        maxText.setVisibility(View.INVISIBLE);
+        lbsText.setVisibility(View.INVISIBLE);
         //Button object for the button pressed
         Button percent = (Button) view;
         //Changing the value of the constant percentage

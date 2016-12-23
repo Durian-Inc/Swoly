@@ -1,21 +1,25 @@
 package com.tripidevs.swoly;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 
-/**
- * Created by Innocent Niyibizi on 12/18/2016.
- * Class for Swoly settings
- */
+public class Settings extends PreferenceActivity {
 
-public class Settings extends Activity {
-    //Overriding on create function
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings);
+        getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
     }
 
+    public static class MyPreferenceFragment extends PreferenceFragment
+    {
+        @Override
+        public void onCreate(final Bundle savedInstanceState)
+        {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.layout.settings);
+        }
+    }
 
 }
-

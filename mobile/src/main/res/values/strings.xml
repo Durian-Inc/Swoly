@@ -18,5 +18,15 @@
     <string name="custompreset_desc">image to be used as button to set custom percent</string>
     <string name="presets_text">Presets</string>
     <string name="percent_sign">%</string>
+    <string-array name="outputTypes">
+        <item>Weight on each side</item>
+        <item>Weight total</item>
+        <item>Weight total minus bar</item>
+    </string-array>
+    <string-array name="listValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 
 </resources>
