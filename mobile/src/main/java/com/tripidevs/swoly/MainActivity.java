@@ -3,8 +3,10 @@ package com.tripidevs.swoly;
     Main activity for mobile
  */
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +20,6 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.vision.text.Text;
 
 import static com.tripidevs.swoly.R.id;
 
@@ -35,6 +36,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String newMax = SP.getString("maxDefault", "135");
+        String newBarWeight = SP.getString("barWeight", "45");
+        if(newMax.equals("135"))
+        {
+            Constant.max = 135;
+        }
+        else
+        {
+            Constant.max = Integer.parseInt(newMax);
+            EditText defaultMax = (EditText) findViewById(id.maxweight);
+            defaultMax.setText(newMax);
+        }
+
+        //New bar weight
+        if(newBarWeight.equals("45"))
+        {
+            Constant.barWeight = 45;
+        }
+        else
+        {
+            Constant.barWeight = Integer.parseInt(newBarWeight);
+        }
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -63,6 +87,16 @@ public class MainActivity extends AppCompatActivity {
 
     //Function to change the weight when the plus or minus buttons are pressed
     public void changeWeight(View v) {
+        int changeNum = 0;
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        if(SP.getBoolean("incrementOne", false))
+        {
+            changeNum = 1;
+        }
+        else
+        {
+            changeNum = 5;
+        }
         //Code to get text inside accent circle, relating to max weight
         //then removes both elements from the screen once you interact with it.
         TextView maxText = (TextView) findViewById(id.maxText);
@@ -76,9 +110,9 @@ public class MainActivity extends AppCompatActivity {
         //Max weight text box
         EditText maxWeight = (EditText) findViewById(id.maxweight);
         if(plus)
-            Constant.max+=5;    //Adding five to the max value
-        if (!plus&&(((((Constant.max)-5) * Constant.percent) - 45) / 2) > 0)
-            Constant.max-=5;    //Subtracting five from the max value if the value is grater than 0
+            Constant.max+=changeNum;    //Adding five to the max value
+        if (!plus&&(((((Constant.max)-changeNum) * Constant.percent) - Constant.barWeight) / 2) > 0)
+            Constant.max-=changeNum;    //Subtracting five from the max value if the value is grater than 0
         //Setting the text value of the max weight to the value from the constants
         maxWeight.setText(String.valueOf(Constant.max));
         //Calling the function to refresh the value of the each side text
@@ -96,20 +130,21 @@ public class MainActivity extends AppCompatActivity {
         //Button object for the button pressed
         Button percent = (Button) view;
         //Changing the value of the constant percentage
-        if ((((Constant.max * Constant.percent) - 45) / 2)>0)
+        if ((((Constant.max * Constant.percent) - Constant.barWeight) / 2)>0)
             Constant.percent = (Float.parseFloat(percent.getText().toString()))/100;
         refreshEachSide();  //Refreshing the sides text value
     }
 
     //Function to refresh the value of the each sides text
     public void refreshEachSide() {
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         //Object to hold the value of the each side text
         TextView sides = (TextView) findViewById(id.txtEachSide);
         //Double to hold the value of each side
         double eachSideWeight;
         //Setting each side double equal to the result of the appropriate function
         //((Maxweight*percentage)-barweight)/2
-        eachSideWeight = ((Constant.max * Constant.percent) - 45) / 2;
+        eachSideWeight = findEquation(SP.getString("outputFormat", "1"));
         //Checking the value of each side
         //If greater than 0 then value of each side text is changed accordingly
         //Else toast displaying "Please lift more is displayed"
@@ -125,6 +160,28 @@ public class MainActivity extends AppCompatActivity {
         //Displaying only two decimal places using string format function
         TextView currentPercent = (TextView) findViewById(id.txtCurrentPercent);
         currentPercent.setText(String.valueOf(Math.round(Constant.percent*100)));
+    }
+
+    public float findEquation(String entry)
+    {
+        TextView text = (TextView) findViewById(id.textView7);
+        float weight = 0f;
+        switch (entry)
+        {
+            case "1":
+                weight = Constant.weightOnEachSide();
+                text.setText("lbs (per side)");
+                break;
+            case "2":
+                weight = Constant.weightTotal();
+                text.setText("Weight total");
+                break;
+            case "3":
+                weight = Constant.totalMinusBar();
+                text.setText("Weight total minus bar");
+                break;
+        }
+        return weight;
     }
 
     //Function that will switch the main activity to the settings activity
