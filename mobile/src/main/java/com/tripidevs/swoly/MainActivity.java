@@ -174,11 +174,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "2":
                 weight = Constant.weightTotal();
-                text.setText("Weight total");
+                text.setText("lbs (total)");
                 break;
             case "3":
                 weight = Constant.totalMinusBar();
-                text.setText("Weight total minus bar");
+                text.setText("lbs (total - bar)");
                 break;
         }
         return weight;
