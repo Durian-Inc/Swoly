@@ -1,5 +1,7 @@
 package com.tripidevs.swoly;
-
+/*
+    Main activity for mobile
+ */
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
