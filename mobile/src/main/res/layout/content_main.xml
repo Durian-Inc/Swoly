@@ -182,9 +182,9 @@
             android:textAlignment="center"
             android:elevation="25dp"
             android:textColor="@color/textColor"
+            android:layout_below="@+id/imageView2"
             android:layout_centerHorizontal="true"
-            android:layout_alignBottom="@+id/minuscircle"
-            android:layout_below="@+id/maxweight" />
+            android:layout_marginTop="6dp" />
 
     </RelativeLayout>
 
