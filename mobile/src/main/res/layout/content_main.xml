@@ -78,12 +78,13 @@
         <ImageView
             android:contentDescription="@string/accentcircle_desc"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:srcCompat="@drawable/circleaccent"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:id="@+id/accentcircle"
-            android:adjustViewBounds="true"
+            android:minWidth="150dp"
+            android:minHeight="150dp"
             android:elevation="25dp"
             android:clickable="true" />
 
@@ -162,18 +163,6 @@
             android:editable="true" />
 
         <TextView
-            android:text="Max Weight:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/maxText"
-            android:textColor="@color/textColor"
-            android:elevation="25dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:layout_above="@+id/maxweight"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
             android:text="lbs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -185,6 +174,18 @@
             android:layout_below="@+id/imageView2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="6dp" />
+
+        <TextView
+            android:text="Max Weight:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/maxText"
+            android:textColor="@color/textColor"
+            android:elevation="25dp"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:layout_above="@+id/maxweight"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
